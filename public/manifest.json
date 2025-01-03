@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Browser History Insights",
+    "version": "1.0.0",
+    "description": "Visualize your browsing habits through interactive charts",
+    "permissions": ["history", "storage"],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "background": {
+      "service_worker": "src/background.js",
+      "type": "module"
+    }
+  }
