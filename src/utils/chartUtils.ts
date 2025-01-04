@@ -1,6 +1,7 @@
 import { HistoryItem, ChartData } from '../types/history';
 
 export const getDomainData = (history: HistoryItem[]): ChartData => {
+  console.log('Processing history items:', history.length);
   const domains = history.reduce((acc, item) => {
     const domain = new URL(item.url).hostname;
     acc[domain] = (acc[domain] || 0) + item.visitCount;
