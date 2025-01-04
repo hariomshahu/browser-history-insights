@@ -9,11 +9,17 @@
     "watch": "vite build --watch"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^2.1.4",
+    "@radix-ui/react-slot": "^1.1.1",
     "chart.js": "^4.4.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "date-fns": "^3.0.6",
+    "lucide-react": "^0.469.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.254",
