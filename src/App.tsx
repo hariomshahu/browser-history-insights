@@ -46,7 +46,7 @@ const App: React.FC = () => {
   const stats = calculateStats(history);
 
   return (
-    <div className="p-4 w-96 bg-gray-100 min-h-screen">
+    <div className="p-4 w-96 min-h-[500px] max-h-[500px] overflow-y-auto bg-gray-100">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">Browser History Insights</h1>
       
       <TimeRangeSelector 
