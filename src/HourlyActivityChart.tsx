@@ -4,9 +4,10 @@ import { HistoryItem } from '../src/types/history';
 
 interface HourlyActivityChartProps {
   history: HistoryItem[];
+  isDark: boolean;
 }
 
-export const HourlyActivityChart: React.FC<HourlyActivityChartProps> = ({ history }) => {
+export const HourlyActivityChart: React.FC<HourlyActivityChartProps> = ({ history, isDark }) => {
   const hourlyData = Array(24).fill(0);
   
   history.forEach(item => {
@@ -20,8 +21,8 @@ export const HourlyActivityChart: React.FC<HourlyActivityChartProps> = ({ histor
       label: 'Activity by Hour',
       data: hourlyData,
       fill: true,
-      borderColor: '#4BC0C0',
-      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: isDark ? '#4fd1c5' : '#4BC0C0',
+      backgroundColor: isDark ? 'rgba(79, 209, 197, 0.1)' : 'rgba(75, 192, 192, 0.2)',
       tension: 0.4
     }]
   };
@@ -35,11 +36,30 @@ export const HourlyActivityChart: React.FC<HourlyActivityChartProps> = ({ histor
           title: {
             display: true,
             text: 'Browsing Activity by Hour'
+          },
+          legend: {
+            labels: {
+              color: isDark ? '#e5e7eb' : '#1f2937'
+            }
           }
         },
         scales: {
+          x: {
+            grid: {
+              color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+            },
+            ticks: {
+              color: isDark ? '#9ca3af' : '#4b5563'
+            }
+          },
           y: {
-            beginAtZero: true
+            beginAtZero: true,
+            grid: {
+              color: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+            },
+            ticks: {
+              color: isDark ? '#9ca3af' : '#4b5563'
+            }
           }
         }
       }}

@@ -30,20 +30,22 @@ interface TimeRangeSelectorProps {
   timeRange: string;
   setTimeRange: (range: string) => void;
   loading: boolean;
+  isDark: boolean;
 }
 
 export const TimeRangeSelector: React.FC<TimeRangeSelectorProps> = ({ 
   timeRange, 
   setTimeRange, 
-  loading 
+  loading,
+  isDark 
 }) => (
   <div className="mb-4">
     <select
       value={timeRange}
       onChange={(e) => setTimeRange(e.target.value)}
-      className="p-2 border rounded bg-white w-full cursor-pointer"
+      className={`p-2 border rounded w-full cursor-pointer
+        ${isDark ? 'bg-gray-700 text-gray-200 border-gray-600':'bg-white text-gray-800 border-gray-300'}`}
       disabled={loading}
-      style={{maxHeight:'200px'}}
     >
       <option value="hour">Last Hour</option>
       <option value="6hours">Last 6 Hours</option>
